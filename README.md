@@ -1,0 +1,2 @@
+# activosfijos-serv.github.io
+PERMITE CONOCER LOS DETALLES DE LOS ACTIVOS FIJOS
