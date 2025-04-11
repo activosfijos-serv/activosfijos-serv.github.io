@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escáner de Código de Barras</title>
+    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #reader {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            border: 2px solid #ddd;
+            margin: 20px 0;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escáner de Códigos de Barras y QR</h1>
+    <p>Apunta con la cámara al código para escanearlo.</p>
+
+    <div id="reader"></div>
+
+    <script>
+        // Función que se ejecuta cuando se escanea un código
+        function onScanSuccess(decodedText, decodedResult) {
+            alert(`¡Código escaneado con éxito! Información: ${decodedText}`);
+            // Aquí puedes hacer lo que quieras con la información escaneada
+            // Ejemplo: buscar en tu base de datos, mostrar en pantalla, etc.
+        }
+
+        // Iniciar el lector de códigos QR
+        const html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", 
+            { fps: 10, qrbox: 250 }
+        );
+        html5QrcodeScanner.render(onScanSuccess);
+    </script>
+</body>
+</html>
